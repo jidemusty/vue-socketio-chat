@@ -34,7 +34,7 @@
                             return;
                         }
 
-                        // send
+                        socket.emit('message.sent', this.message);
 
                         this.message = '';
                     }

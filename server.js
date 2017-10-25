@@ -9,7 +9,9 @@ app.get('/', (req, res) => {
 io.on('connection', function (socket) {
     var user = Date.now();
 
-
+    socket.on('message.sent', function (message) {
+        io.emit('message', user + ': ' + message);
+    });
 
     io.emit('message', 'User ' + user + ' connected');
 })
