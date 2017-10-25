@@ -6,8 +6,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', () => {
-    console.log('Someone joined');
+io.on('connection', function (socket) {
+    var user = Date.now();
+
+
+
+    io.emit('message', 'User ' + user + ' connected');
 })
 
 http.listen(3000, () => {
