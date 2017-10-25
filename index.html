@@ -5,6 +5,30 @@
         <title>Vue Chat</title>
     </head>
     <body>
-        chat
+        <div class="chat">
+            <ul>
+                <li v-for="message in messages">
+                    {{ message }}
+                </li>
+            </ul>
+
+            <input type="text" v-model="message" />
+            
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+
+        <script>
+            new Vue({
+                el: ".chat",
+                data: {
+                    message: '',
+                    messages: [
+                        'hi',
+                        'hello'
+                    ]
+                }
+            })
+        </script>
     </body>
 </html>
