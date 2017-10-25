@@ -3,16 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <title>Vue Chat</title>
+
+        <style>
+            body, html {
+                margin: 0;
+                color: #555;
+                font: 100% "Roboto";
+            }
+
+            .chat {
+                width: 100%;
+            }
+
+            .chat__list {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .chat__list-item {
+                padding: 10px;
+                font-size: .9em;
+            }
+
+            .chat__list-item:nth-child(odd) {
+                background-color: #F5F5F5
+            }
+
+            .chat__input {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                padding: 10px;
+                border: 3px solid #F5F5F5;
+                font-size: .9em;
+            }
+        </style>
     </head>
     <body>
         <div class="chat">
-            <ul>
-                <li v-for="message in messages">
+            <ul class="chat__list">
+                <li class="chat__list-item" v-for="message in messages">
                     {{ message }}
                 </li>
             </ul>
 
-            <input type="text" v-model="message" @keydown="send" />
+            <input class="chat__input" type="text" v-model="message" @keydown="send" placeholder="Type a message"/>
             
         </div>
 
