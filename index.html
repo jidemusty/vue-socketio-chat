@@ -43,7 +43,7 @@
     <body>
         <div class="chat">
             <ul class="chat__list">
-                <li class="chat__list-item" v-for="message in messages">
+                <li class="chat__list-item" v-for="message in messages" track-by="$index">
                     {{ message }}
                 </li>
             </ul>
