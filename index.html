@@ -17,8 +17,11 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 
         <script>
+            var socket = io();
+
             new Vue({
                 el: ".chat",
                 data: {
